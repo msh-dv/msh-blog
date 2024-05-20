@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+$fg-color: #080905;
+$bg-color: #ffffff;
+$main-color: #293665;
+
+html {
+  font-family: "Roboto";
+}
+
+body {
+  color: $fg-color;
+  background-color: $bg-color;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  gap:3em;
+  align-items: center;
+
+  #context {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: $fg-color;
+    margin: 0;
+  }
+
+  & .animation {
+    position: relative;
+    width: 12em;
+    height: 12em;
+  }
+
+  & span {
+    display: block;
+    width: 10em;
+    height: 10em;
+
+    & svg {
+      width: inherit;
+      height: inherit;
+      fill: $fg-color;
+    }
+  }
+
+  #gear-1 {
+    top: -2em;
+    right: -2em;
+    position: absolute;
+    animation: rotate-right 2s infinite alternate ease-in-out;
+  }
+
+  #gear-2 {
+    width: 8em;
+    height: 8em;
+    bottom: -1em;
+    left: -1em;
+    position: absolute;
+    animation: rotate-left 2s infinite alternate ease-in-out;
+  }
+}
+
+@keyframes rotate-right {
+  from {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotate-left {
+  from {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media screen and (max-width:768px){
+  #context {
+    width: 80%;
+  }
+}
